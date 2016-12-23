@@ -3,9 +3,11 @@ package com.musicstore.dao.impl;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
 import com.musicstore.dao.CartDao;
 import com.musicstore.model.Cart;
 
+@Repository
 public class CartDaoImpl implements CartDao {
 
     private Map<String, Cart> listOfCarts;
@@ -22,11 +24,11 @@ public class CartDaoImpl implements CartDao {
 	return cart;
     }
 
-    public void deleteCart(Cart cart) {
-	if (!listOfCarts.containsKey(cart.getCartId())) {
-	    throw new IllegalArgumentException(String.format("Cart with ID-% does not exist", cart.getCartId()));
+    public void deleteCart(String cartId) {
+	if (!listOfCarts.containsKey(cartId)) {
+	    throw new IllegalArgumentException(String.format("Cart with ID-% does not exist", cartId));
 	}
-	listOfCarts.remove(cart.getCartId());
+	listOfCarts.remove(cartId);
     }
 
     public Cart retrieveCart(String cartId) {

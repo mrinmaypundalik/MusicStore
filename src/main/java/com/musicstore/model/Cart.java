@@ -27,12 +27,12 @@ public class Cart {
 	this.cartId = cartId;
     }
 
-    public Map<String, CartItem> getCartItem() {
+    public Map<String, CartItem> getCartItems() {
 	return cartItems;
     }
 
-    public void setCartItem(Map<String, CartItem> cartItem) {
-	this.cartItems = cartItem;
+    public void setCartItems(Map<String, CartItem> cartItems) {
+	this.cartItems = cartItems;
     }
 
     public double getGrandTotal() {
@@ -44,9 +44,9 @@ public class Cart {
     }
 
     private void updateGrandTotal() {
-	double grandTotal = 0.0d;
+	grandTotal = 0.0d;
 	for (CartItem cartItem : cartItems.values()) {
-	    grandTotal = grandTotal + cartItem.getProduct().getProductPrice();
+	    grandTotal = grandTotal + cartItem.getTotalPrice();
 	}
     }
 
@@ -56,6 +56,8 @@ public class Cart {
 	if (cartItems.containsKey(productId)) {
 	    CartItem existingCartItem = cartItems.get(productId);
 	    existingCartItem.setQuantity(existingCartItem.getQuantity() + cartItem.getQuantity());
+	    existingCartItem
+		    .setTotalPrice(existingCartItem.getQuantity() * existingCartItem.getProduct().getProductPrice());
 	    cartItems.put(productId, existingCartItem);
 	} else {
 	    cartItems.put(productId, cartItem);
