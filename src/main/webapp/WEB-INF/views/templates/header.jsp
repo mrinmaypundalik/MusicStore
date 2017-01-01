@@ -16,18 +16,37 @@
 <title>Music Mania</title>
 
 <!--AngularJS-->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+
+<!--AngularJS Custom Script-->
+<script src="<c:url value="/resources/js/controller.js"/>" /></script>
+
+<!--jQuery-->
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!--Data Table jQuery-->
+<script type="text/javascript"
+	src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
 
 <!-- Bootstrap core CSS -->
 <link href="<c:url value="/resources/css/bootstrap.min.css"/>"
 	rel="stylesheet">
-	
-	<!-- Custom Music Mania CSS -->
-<link href="<c:url value="/resources/css/custom.css"/>"
-	rel="stylesheet">
+
+<!-- Custom Music Mania CSS -->
+<link href="<c:url value="/resources/css/custom.css"/>" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="<c:url value="/resources/css/carousel.css"/>"
+	rel="stylesheet">
+
+<!-- BootStrap -->
+<script src="<c:url value="/resources/js/bootstrap.min.js"/>" /></script>
+
+<!-- Data Table jQuery CSS -->
+<link
+	href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css"
 	rel="stylesheet">
 
 </head>
@@ -51,18 +70,30 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="<c:url value="/"/>">Home</a></li>
-						<li><a href="<c:url value="/productslist"/>">Products</a></li>
+						<li><a href="<c:url value="/product/productlist"/>">Products</a></li>
+						<li><a href="<c:url value="/about"/>">About</a></li>
 					</ul>
 					<ul class="nav navbar-nav pull-right">
-					<li><a href="<c:url value="/admin"/>">Admin</a></li>
-					<c:if test="${pageContext.request.userPrincipal.name !=null}">
-					<li><a href='<c:url value="/j_spring_security_logout"/>'>Logout</a></li>
-					</c:if>
+						<c:if test="${pageContext.request.userPrincipal.name !=null}">
+							<li><a>Welcome ${pageContext.request.userPrincipal.name}</a></li>
+							<li class="pull-right"><a
+								href='<c:url value="/j_spring_security_logout"/>'>Logout</a></li>
+						</c:if>
+						<c:if
+							test="${pageContext.request.userPrincipal.name!='admin' && pageContext.request.userPrincipal.name!=null}">
+							<li class="pull-right"><a
+								href='<c:url value="/customer/cart"/>'>Cart</a></li>
+						</c:if>
+						<c:if test="${pageContext.request.userPrincipal.name=='admin' }">
+							<li><a href='<c:url value="/admin"/>'>Admin</a></li>
+						</c:if>
+						<c:if test="${pageContext.request.userPrincipal.name ==null}">
+							<li><a href='<c:url value="/login"/>'>Login</a></li>
+							<li><a href='<c:url value="/register"/>'>Register</a></li>
+						</c:if>
 					</ul>
 				</div>
 			</div>
 			</nav>
-
 		</div>
 	</div>

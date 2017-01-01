@@ -11,7 +11,7 @@
 
 		<div class="container">
 			<form:form
-				action="${pageContext.request.contextPath}/admin/productInventory/addProduct"
+				action="${pageContext.request.contextPath}/admin/product/addProduct"
 				method="POST" commandName="product" enctype="multipart/form-data">
 				<div class="form-group">
 					<label for="name">Product Name</label>
@@ -40,16 +40,16 @@
 				</div>
 				<div class="form-group">
 					<label for="Condition">Condition</label> <label
-						class="checkbox-inline"> <form:checkbox
+						class="checkbox-inline"> <form:radiobutton
 							path="productCondition" id="Condition" value="New" />New
-					</label> <label class="checkbox-inline"> <form:checkbox
+					</label> <label class="checkbox-inline"> <form:radiobutton
 							path="productCondition" id="Condition" value="Used" />Used
 					</label>
 				</div>
 				<div class="form-group">
 					<label for="Status">Status</label> <label class="checkbox-inline">
-						<form:checkbox path="productStatus" id="Status" value="Active" />Active
-					</label> <label class="checkbox-inline"> <form:checkbox
+						<form:radiobutton path="productStatus" id="Status" value="Active" />Active
+					</label> <label class="checkbox-inline"> <form:radiobutton
 							path="productStatus" id="Status" value="Inactive" />Inactive
 					</label>
 				</div>
@@ -75,7 +75,7 @@
 				<br />
 
 				<form:button type="submit" value="Add" class="btn btn-primary">Submit</form:button>
-				<a href='<c:url value="/admin/productInventory"/>'
+				<a href='<c:url value="/admin/product/productInventory"/>'
 					class="btn btn-default">Cancel</a>
 			</form:form>
 		</div>

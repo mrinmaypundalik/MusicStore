@@ -11,7 +11,7 @@
 
 		<div class="container">
 			<form:form
-				action="${pageContext.request.contextPath}/admin/productInventory/editProduct"
+				action="${pageContext.request.contextPath}/admin/product/editProduct"
 				method="POST" commandName="product" enctype="multipart/form-data">
 
 				<div class="form-group">
@@ -74,15 +74,16 @@
 				<div class="form-group">
 					<label for="productImage" class="control-label">Upload
 						Image</label>
+						<img alt="No image" src="/resources/images/${product.productImage}">
 					<form:input path="productImage" type="file"
-						class="form:input-large" id="productImage" />
+						class="form:input-large" id="productImage"/>
 				</div>
 
 				<br />
 				<br />
 
 				<form:button type="submit" value="submit" class="btn btn-primary">Submit</form:button>
-				<a href='<c:url value="/admin/productInventory"/>'
+				<a href='<c:url value="/admin/product/productInventory"/>'
 					class="btn btn-default">Cancel</a>
 			</form:form>
 		</div>

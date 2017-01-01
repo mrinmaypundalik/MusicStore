@@ -32,9 +32,9 @@
 					<h4>${product.productPrice}USD</h4>
 					<br>
 					<c:set var="role" scope="page" value="${param.role}"></c:set>
-					<c:set var="url" scope="page" value="/productslist"></c:set>
+					<c:set var="url" scope="page" value="/product/productlist"></c:set>
 					<c:if test="${role='admin' }">
-						<c:set var="url" scope="page" value="/admin/productInventory"></c:set>
+						<c:set var="url" scope="page" value="/admin/product/productInventory"></c:set>
 					</c:if>
 
 					<p ng-controller="cartController">
@@ -42,7 +42,7 @@
 							ng-click="addProduct('${product.productId}')"><span
 							class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</a> <a
 							class="btn btn-default" href="<c:url value="${url}"/>">Back</a> <a
-							href="<c:url value="/cart"/>" class="btn btn-default"><span
+							href="<c:url value="/customer/cart"/>" class="btn btn-default"><span
 							class="glyphicon glyphicon-hand-right"></span>View Cart</a>
 					</p>
 

@@ -1,43 +1,33 @@
 package com.musicstore.controllers;
 
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-
-import com.musicstore.dao.ProductsDao;
-import com.musicstore.model.Product;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@RequestMapping("/")
 public class HomeController {
 
-    private final static String HOME_PAGE = "landingpage";
-    private final static String PDP = "productsdisplaypage";
-    private final static String PLP = "productslistpage";
-
-    @Autowired
-    private ProductsDao productsDao;
-
-    @RequestMapping("/")
-    public String home() {
-	return HOME_PAGE;
+    @RequestMapping
+    public String home(){
+	return "landingpage";
     }
 
-    @RequestMapping("/productList/viewProduct/{productId}")
-    public String displayProductInfo(@PathVariable String productId, Model model) {
-	Product product = productsDao.getProductById(productId);
-	model.addAttribute(product);
-	return PDP;
+    @RequestMapping("/about")
+    public String about(){
+	return "about";
     }
-
-    @RequestMapping("/productslist")
-    public String displayProductsList(Model model) {
-	List<Product> products = productsDao.getAllProducts();
-	model.addAttribute("products", products);
-	return PLP;
+    
+    @RequestMapping("/login")
+    public String login(@RequestParam (value="error",required=false) String error, @RequestParam (value="logout",required=false) String logout, Model model){
+	
+	if(error!=null){
+	    model.addAttribute("errorMessage","The username and password did not match");
+	}
+	if(logout!=null){
+	    model.addAttribute("logoutMessage","You have logged out successfully!");
+	}
+	return "login";
     }
 }

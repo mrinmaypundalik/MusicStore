@@ -28,12 +28,6 @@
 	margin-bottom: 300px;
 }
 
-.home-image {
-	width: 100%;
-	display: block !important;
-	height: auto !important;
-}
-
 .login-box {
 	text-align: center;
 }
@@ -43,3 +37,22 @@
 	margin: auto;
 	margin-top: 10%;
 }
+
+.home-image {
+	width: 100%;
+	display: block !important;
+	height: auto !important;
+}
+
+.rainbow-text {                                                                                                                                                                           
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-gradient(linear,  left top,  left bottom, 
+        color-stop(0.00, red), 
+        color-stop(16%, orange),
+        color-stop(32%, yellow),
+        color-stop(48%, green),
+        color-stop(60%, blue),
+        color-stop(76%, indigo),
+        color-stop(1.00, violet));
+  }

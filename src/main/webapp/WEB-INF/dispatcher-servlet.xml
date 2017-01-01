@@ -13,7 +13,13 @@
        http://www.springframework.org/schema/tx 
        http://www.springframework.org/schema/tx/spring-tx.xsd">
        
-       <context:component-scan base-package="com.musicstore.controllers,com.musicstore.dao,com.musicstore.model"/>
+       <context:component-scan base-package="com.musicstore.*"/>
+       
+       <mvc:annotation-driven>
+       <mvc:argument-resolvers>
+       <bean class="org.springframework.security.web.bind.support.AuthenticationPrincipalArgumentResolver"/>
+       </mvc:argument-resolvers>
+       </mvc:annotation-driven>
        
        <mvc:annotation-driven/>
        <tx:annotation-driven/>
