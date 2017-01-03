@@ -9,11 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=chrome">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<meta name="description" content="Music Mania">
+<meta name="description" content="BookMyMusic">
 <meta name="author" content="Mrinmay Pundalik">
 <!--  <link rel="icon" href="../../favicon.ico"> -->
 
-<title>Music Mania</title>
+<title>BookMyMusic</title>
 
 <!--AngularJS-->
 <script
@@ -66,7 +66,7 @@
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="<c:url value="/"/>">MusicMania</a>
+					<a class="navbar-brand" href="<c:url value="/"/>">BookMyMusic</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
