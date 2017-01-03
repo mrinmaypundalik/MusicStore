@@ -7,10 +7,15 @@
 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="org.h2.Driver" />
+		<!-- <property name="driverClassName" value="org.h2.Driver" />
 		<property name="url" value="jdbc:h2:tcp://localhost/~/test" />
 		<property name="username" value="sa" />
-		<property name="password" value="" />
+		<property name="password" value="" /> -->
+		<!-- Heroku Cloud DB Connection Settings -->
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://us-cdbr-iron-east-04.cleardb.net/heroku_9481ef0511f3893?reconnect=true"/>
+        <property name="username" value="bc24df40bf191f"/>
+        <property name="password" value="1a8a0844"/>
 	</bean>
 
 	<bean id="sessionFactory"
