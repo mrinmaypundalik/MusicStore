@@ -13,8 +13,8 @@
 		</section>
 		<section class="container">
 
-			<a class="btn btn-primary" href='<spring:url value="/"/>'>Start
-				Shopping</a>
+			<a class="btn btn-primary" href='<spring:url value="/login"/>'>Log in
+				to Continue</a>
 		</section>
 	</div>
 </div>

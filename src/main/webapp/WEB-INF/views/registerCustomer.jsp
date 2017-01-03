@@ -110,7 +110,7 @@
 				<br>
 				<form:button type="submit" value="Add" class="btn btn-primary">Register</form:button> | 
 				<a href='<c:url value="/admin/product/productInventory"/>'
-					class="btn btn-default">Cancel</a>
+					class="btn btn-danger">Cancel</a>
 			</form:form>
 		</div>
 	</div>

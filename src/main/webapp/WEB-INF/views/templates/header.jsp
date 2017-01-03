@@ -17,7 +17,7 @@
 
 <!--AngularJS-->
 <script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 
 <!--AngularJS Custom Script-->
 <script src="<c:url value="/resources/js/controller.js"/>" /></script>
@@ -66,7 +66,7 @@
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="<c:url value="/"/>">Music Mania</a>
+					<a class="navbar-brand" href="<c:url value="/"/>">MusicMania</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
@@ -79,17 +79,17 @@
 							<li class="pull-right"><a
 								href='<c:url value="/j_spring_security_logout"/>'>Logout</a></li>
 						</c:if>
-						<c:if
-							test="${pageContext.request.userPrincipal.name!='admin' && pageContext.request.userPrincipal.name!=null}">
+						<c:if test="${pageContext.request.userPrincipal.name!='admin'}">
 							<li class="pull-right"><a
-								href='<c:url value="/customer/cart"/>'>Cart</a></li>
+								href='<c:url value="/customer/cart"/>'>Cart <span
+									class="glyphicon glyphicon-shopping-cart"></span></a></li>
 						</c:if>
 						<c:if test="${pageContext.request.userPrincipal.name=='admin' }">
 							<li><a href='<c:url value="/admin"/>'>Admin</a></li>
 						</c:if>
 						<c:if test="${pageContext.request.userPrincipal.name ==null}">
 							<li><a href='<c:url value="/login"/>'>Login</a></li>
-							<li><a href='<c:url value="/register"/>'>Register</a></li>
+							<li><a href='<c:url value="/register"/>'>Sign Up</a></li>
 						</c:if>
 					</ul>
 				</div>

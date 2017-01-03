@@ -4,6 +4,7 @@ cartApp.controller("cartController", function($scope,$http){
 	
 	$scope.refreshCart = function(){
 		$http.get("/rest/cart/"+$scope.cartId).success(function(data){
+			$scope.productAdded = false;
 			$scope.cart = data;
 		});
 	};
@@ -36,5 +37,26 @@ cartApp.controller("cartController", function($scope,$http){
 			grandTotal += $scope.cart.cartItems[i].totalPrice;
 		}
 		return grandTotal;
+	};
+});
+
+var customerApp = angular.module("customerApp",[]);
+
+customerApp.controller("customerAppController",function($scope,$http){
+	
+	$scope.refreshCustomerList = function(){
+		$http.get("/rest/customer").success(function(data){
+			$scope.customers = data;
+		});
+	};
+	
+	$scope.customerInit = function(){
+		$scope.refreshCustomerList();
+	};
+	
+	$scope.enableDisableCustomer = function(customerId){
+		$http.put("/rest/customer/"+customerId).success(function(){
+			$scope.refreshCustomerList();
+		});
 	};
 });

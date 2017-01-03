@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class ShippingAddress implements Serializable {
 
@@ -25,6 +27,7 @@ public class ShippingAddress implements Serializable {
     private String zipcode;
     
     @OneToOne
+    @JsonIgnore
     private Customer customer;
 
     public int getShippingAddressId() {

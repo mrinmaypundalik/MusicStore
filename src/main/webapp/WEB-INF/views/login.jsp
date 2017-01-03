@@ -23,7 +23,8 @@
 						name="password" id="password" class="form-control" />
 				</div>
 
-				<input type="submit" value="Submit" class="btn btn-primary" /> <input
+				<input type="submit" value="Log In" class="btn btn-primary" />
+				<a href="/register"><span class="btn btn-info">Sign Up</span></a> <input
 					type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 			</form>
 		</div>
