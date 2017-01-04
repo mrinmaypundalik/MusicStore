@@ -134,13 +134,6 @@
 			<artifactId>spring-webflow</artifactId>
 			<version>2.3.3.RELEASE</version>
 		</dependency>
-
-		<dependency>
-			<groupId>com.github.jkutner</groupId>
-			<artifactId>tomcat-redis-session</artifactId>
-			<version>8.5.5.0</version>
-		</dependency>
-		
 	</dependencies>
 	<!-- Heroku Deployment Config -->
 	<build>
