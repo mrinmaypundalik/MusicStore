@@ -63,7 +63,7 @@ public class AdminProduct {
 	if (image != null && !image.isEmpty()) {
 	    try {
 		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-		path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\" + product.getProductId() + ".jpg");
+		path = Paths.get(rootDirectory + "WEB-INF/resources/images/" + product.getProductId() + ".jpg");
 		System.out.println(path.toString());
 		image.transferTo(new File(path.toString()));
 	    } catch (Exception e) {
@@ -95,7 +95,7 @@ public class AdminProduct {
 	if (image != null && !image.isEmpty()) {
 	    try {
 		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-		path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\" + product.getProductId() + ".jpg");
+		path = Paths.get(rootDirectory + "WEB-INF/resources/images/" + product.getProductId() + ".jpg");
 		image.transferTo(new File(path.toString()));
 	    } catch (Exception e) {
 		e.printStackTrace();
@@ -108,7 +108,7 @@ public class AdminProduct {
     @RequestMapping("/deleteProduct/{productId}")
     public String deleteProduct(@PathVariable(value="productId") int productId,Model model,HttpServletRequest request){
 	String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-	path = Paths.get(rootDirectory+"//WEB-INF/resources/images/"+productId+".jpg");
+	path = Paths.get(rootDirectory+"WEB-INF/resources/images/"+productId+".jpg");
 	try {
 	    Files.deleteIfExists(path);
 	} catch (IOException e) {
