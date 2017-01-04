@@ -70,7 +70,12 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="<c:url value="/product/productlist"/>">Products</a></li>
+						<li><c:if
+								test="${pageContext.request.userPrincipal.name!='admin'}">
+								<a href="<c:url value="/product/productlist"/>">Products</a>
+							</c:if> <c:if test="${pageContext.request.userPrincipal.name=='admin'}">
+								<a href="<c:url value="/admin/product/productInventory"/>">Products</a>
+							</c:if></li>
 						<li><a href="<c:url value="/about"/>">About</a></li>
 					</ul>
 					<ul class="nav navbar-nav pull-right">
