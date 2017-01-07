@@ -43,7 +43,7 @@
 					<c:forEach items="${products}" var="product">
 						<tr>
 							<td><img
-								src="<c:url value="/resources/images/${product.productId}.jpg"/>"
+								<%-- src="<c:url value="/resources/images/${product.productId}.jpg"/>" --%> src="${product.productImageUrl}"
 								alt="image" style="width: 100px; height: 100px" /></td>
 							<td>${product.productName}</td>
 							<td>${product.productCategory}</td>
@@ -54,8 +54,7 @@
 									<span class="glyphicon glyphicon-info-sign"></span>
 							</a>&nbsp &nbsp<a ng-if="${isLoggedIn}" href="#"
 								ng-click="addProduct('${product.productId}')"><span
-									class="glyphicon glyphicon-shopping-cart"></span></a>
-							</td>
+									class="glyphicon glyphicon-shopping-cart"></span></a></td>
 						</tr>
 					</c:forEach>
 				</table>

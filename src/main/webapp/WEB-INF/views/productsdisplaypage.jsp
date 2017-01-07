@@ -13,7 +13,7 @@
 			<div class="row">
 				<div class="col-md-5">
 					<img
-						src="<c:url value="/resources/images/${product.productId}.jpg"/>"
+						<%-- src="<c:url value="/resources/images/${product.productId}.jpg"/>" --%> src="${product.productImageUrl}"
 						alt="image" style="width: 100%; height: 100%; text-align: center" />
 				</div>
 
@@ -34,7 +34,8 @@
 					<c:set var="role" scope="page" value="${param.role}"></c:set>
 					<c:set var="url" scope="page" value="/product/productlist"></c:set>
 					<c:if test="${role='admin' }">
-						<c:set var="url" scope="page" value="/admin/product/productInventory"></c:set>
+						<c:set var="url" scope="page"
+							value="/admin/product/productInventory"></c:set>
 					</c:if>
 
 					<p ng-controller="cartController">

@@ -31,7 +31,7 @@
 					</tr>
 					<tr ng-repeat="item in cart.cartItems">
 						<td><img
-							src="<c:url value="/resources/images/{{item.product.productId}}.jpg"/>"
+							<%-- src="<c:url value="/resources/images/{{item.product.productId}}.jpg"/>" --%> src="{{item.product.productImageUrl}}"
 							alt="image" style="width: 100px; height: 100px" /></td>
 						<td>{{item.product.productName}}</td>
 						<td>{{item.product.productPrice}}</td>

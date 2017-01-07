@@ -10,11 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -49,12 +47,23 @@ public class Product implements Serializable {
 
     private String productManufacturer;
 
-    @Transient
-    private MultipartFile productImage;
+    /*
+     * @Transient private MultipartFile productImage;
+     */
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore
     private List<CartItem> cartItems;
+
+    private String productImageUrl;
+
+    public String getProductImageUrl() {
+	return productImageUrl;
+    }
+
+    public void setProductImageUrl(String productImageUrl) {
+	this.productImageUrl = productImageUrl;
+    }
 
     public List<CartItem> getCartItems() {
 	return cartItems;
@@ -64,22 +73,19 @@ public class Product implements Serializable {
 	this.cartItems = cartItems;
     }
 
-    public MultipartFile getProductImage() {
-	return productImage;
-    }
-
-    public void setProductImage(MultipartFile productImage) {
-	this.productImage = productImage;
-    }
-
-
+    /*
+     * public MultipartFile getProductImage() { return productImage; }
+     * 
+     * public void setProductImage(MultipartFile productImage) {
+     * this.productImage = productImage; }
+     */
 
     public int getProductId() {
-        return productId;
+	return productId;
     }
 
     public void setProductId(int productId) {
-        this.productId = productId;
+	this.productId = productId;
     }
 
     public String getProductName() {

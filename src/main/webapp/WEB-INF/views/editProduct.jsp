@@ -71,12 +71,19 @@
 						class="form-control" value="${product.productManufacturer}" />
 				</div>
 
-				<div class="form-group">
+				<%-- 				<div class="form-group">
 					<label for="productImage" class="control-label">Upload
-						Image</label>
-						<img alt="No image" src="/resources/images/${product.productImage}">
+						Image</label> <img alt="No image"
+						src="/resources/images/${product.productImage}" src="${product.productImageUrl}" />
 					<form:input path="productImage" type="file"
-						class="form:input-large" id="productImage"/>
+						class="form:input-large" id="productImage" />
+				</div> --%>
+
+				<div class="form-group">
+					<label for="productImageUrl" class="control-label">Image
+						URL</label>
+					<form:input path="productImageUrl" class="form-control"
+						id="productImageUrl" />
 				</div>
 
 				<br />
