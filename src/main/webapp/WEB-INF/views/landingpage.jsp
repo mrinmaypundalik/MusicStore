@@ -14,7 +14,7 @@
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">
 			<img class="first-slide home-image"
-				src="<c:url value="http://www.siwallpaperhd.com/wp-content/uploads/2015/10/music_girl_art_wallpaper.jpg"/>"
+				src="<c:url value="http://wallpapercave.com/wp/EWHbfcC.jpg"/>"
 				alt="First slide">
 			<div class="container">
 				<div class="carousel-caption">
